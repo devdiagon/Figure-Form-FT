@@ -44,12 +44,12 @@ namespace TareaFormas.form_views
 
         private void FrmTrapecio_Load(object sender, EventArgs e)
         {
-            ObjTrapeze.initializeData(txtInputA, txtInputB, txtInputHeight, txtInputSide1, txtInputSide2, txtPerimeter, txtArea);
+            ObjTrapeze.initializeData(txtInputA, txtInputB, txtInputSide1, txtInputSide2, txtPerimeter, txtArea);
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            ObjTrapeze.initializeData(txtInputA, txtInputB, txtInputHeight, txtInputSide1, txtInputSide2, txtPerimeter, txtArea);
+            ObjTrapeze.initializeData(txtInputA, txtInputB, txtInputSide1, txtInputSide2, txtPerimeter, txtArea);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace TareaFormas.form_views
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            ObjTrapeze.ReadData(txtInputA, txtInputB, txtInputHeight, txtInputSide1, txtInputSide2);
+            ObjTrapeze.ReadData(txtInputA, txtInputB, txtInputSide1, txtInputSide2);
             ObjTrapeze.calculatePerimeter();
             ObjTrapeze.calculateArea();
             ObjTrapeze.PrintData(txtPerimeter, txtArea);
