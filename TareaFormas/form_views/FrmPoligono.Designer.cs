@@ -33,9 +33,7 @@
             this.grbInputs = new System.Windows.Forms.GroupBox();
             this.lstInputSides = new System.Windows.Forms.ListBox();
             this.lblInputSides = new System.Windows.Forms.Label();
-            this.txtInputB = new System.Windows.Forms.TextBox();
             this.txtInputA = new System.Windows.Forms.TextBox();
-            this.lblInputB = new System.Windows.Forms.Label();
             this.lblInputA = new System.Windows.Forms.Label();
             this.gbrProcess = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
@@ -57,7 +55,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(241, 9);
+            this.lblTitle.Location = new System.Drawing.Point(231, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(406, 48);
             this.lblTitle.TabIndex = 0;
@@ -67,14 +65,12 @@
             // 
             this.grbInputs.Controls.Add(this.lstInputSides);
             this.grbInputs.Controls.Add(this.lblInputSides);
-            this.grbInputs.Controls.Add(this.txtInputB);
             this.grbInputs.Controls.Add(this.txtInputA);
-            this.grbInputs.Controls.Add(this.lblInputB);
             this.grbInputs.Controls.Add(this.lblInputA);
             this.grbInputs.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbInputs.Location = new System.Drawing.Point(13, 60);
             this.grbInputs.Name = "grbInputs";
-            this.grbInputs.Size = new System.Drawing.Size(431, 167);
+            this.grbInputs.Size = new System.Drawing.Size(431, 148);
             this.grbInputs.TabIndex = 1;
             this.grbInputs.TabStop = false;
             this.grbInputs.Text = "Entradas";
@@ -93,7 +89,7 @@
             "10",
             "11",
             "12"});
-            this.lstInputSides.Location = new System.Drawing.Point(181, 117);
+            this.lstInputSides.Location = new System.Drawing.Point(181, 79);
             this.lstInputSides.Name = "lstInputSides";
             this.lstInputSides.Size = new System.Drawing.Size(206, 44);
             this.lstInputSides.TabIndex = 6;
@@ -102,19 +98,11 @@
             // 
             this.lblInputSides.AutoSize = true;
             this.lblInputSides.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInputSides.Location = new System.Drawing.Point(7, 120);
+            this.lblInputSides.Location = new System.Drawing.Point(7, 82);
             this.lblInputSides.Name = "lblInputSides";
             this.lblInputSides.Size = new System.Drawing.Size(168, 20);
             this.lblInputSides.TabIndex = 7;
             this.lblInputSides.Text = "Número de lados (n):";
-            // 
-            // txtInputB
-            // 
-            this.txtInputB.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInputB.Location = new System.Drawing.Point(181, 75);
-            this.txtInputB.Name = "txtInputB";
-            this.txtInputB.Size = new System.Drawing.Size(206, 28);
-            this.txtInputB.TabIndex = 6;
             // 
             // txtInputA
             // 
@@ -123,16 +111,6 @@
             this.txtInputA.Name = "txtInputA";
             this.txtInputA.Size = new System.Drawing.Size(206, 28);
             this.txtInputA.TabIndex = 4;
-            // 
-            // lblInputB
-            // 
-            this.lblInputB.AutoSize = true;
-            this.lblInputB.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInputB.Location = new System.Drawing.Point(57, 78);
-            this.lblInputB.Name = "lblInputB";
-            this.lblInputB.Size = new System.Drawing.Size(118, 20);
-            this.lblInputB.TabIndex = 5;
-            this.lblInputB.Text = "Apotema (ap):";
             // 
             // lblInputA
             // 
@@ -150,7 +128,7 @@
             this.gbrProcess.Controls.Add(this.btnReset);
             this.gbrProcess.Controls.Add(this.btnCalculate);
             this.gbrProcess.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbrProcess.Location = new System.Drawing.Point(14, 249);
+            this.gbrProcess.Location = new System.Drawing.Point(14, 234);
             this.gbrProcess.Name = "gbrProcess";
             this.gbrProcess.Size = new System.Drawing.Size(430, 93);
             this.gbrProcess.TabIndex = 2;
@@ -197,7 +175,7 @@
             this.gbrOutputs.Controls.Add(this.lblArea);
             this.gbrOutputs.Controls.Add(this.lblPerimeter);
             this.gbrOutputs.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbrOutputs.Location = new System.Drawing.Point(13, 363);
+            this.gbrOutputs.Location = new System.Drawing.Point(13, 348);
             this.gbrOutputs.Name = "gbrOutputs";
             this.gbrOutputs.Size = new System.Drawing.Size(431, 130);
             this.gbrOutputs.TabIndex = 3;
@@ -245,7 +223,7 @@
             // picImage
             // 
             this.picImage.Image = ((System.Drawing.Image)(resources.GetObject("picImage.Image")));
-            this.picImage.Location = new System.Drawing.Point(500, 95);
+            this.picImage.Location = new System.Drawing.Point(501, 130);
             this.picImage.Name = "picImage";
             this.picImage.Size = new System.Drawing.Size(285, 260);
             this.picImage.TabIndex = 4;
@@ -256,7 +234,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(830, 511);
+            this.ClientSize = new System.Drawing.Size(830, 497);
             this.Controls.Add(this.picImage);
             this.Controls.Add(this.gbrOutputs);
             this.Controls.Add(this.gbrProcess);
@@ -289,9 +267,7 @@
         private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.TextBox txtPerimeter;
         private System.Windows.Forms.Label lblArea;
-        private System.Windows.Forms.TextBox txtInputB;
         private System.Windows.Forms.TextBox txtInputA;
-        private System.Windows.Forms.Label lblInputB;
         private System.Windows.Forms.Label lblInputA;
         private System.Windows.Forms.PictureBox picImage;
         private System.Windows.Forms.Label lblInputSides;

@@ -45,12 +45,12 @@ namespace TareaFormas.form_views
 
         private void FrmPoligono_Load(object sender, EventArgs e)
         {
-            ObjPolygon.initializeData(txtInputA, txtInputB, lstInputSides, txtPerimeter, txtArea);
+            ObjPolygon.initializeData(txtInputA, lstInputSides, txtPerimeter, txtArea);
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            ObjPolygon.initializeData(txtInputA, txtInputB, lstInputSides, txtPerimeter, txtArea);
+            ObjPolygon.initializeData(txtInputA, lstInputSides, txtPerimeter, txtArea);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace TareaFormas.form_views
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            ObjPolygon.ReadData(txtInputA, txtInputB, lstInputSides);
+            ObjPolygon.ReadData(txtInputA, lstInputSides);
             ObjPolygon.calculatePerimeter();
             ObjPolygon.calculateArea();
             ObjPolygon.PrintData(txtPerimeter, txtArea);

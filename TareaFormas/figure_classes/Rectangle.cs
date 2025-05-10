@@ -24,7 +24,7 @@ namespace TareaFormas.figure_classes
 
         public void calculatePerimeter()
         {
-            perimeter = 2 * rBase +  2 * rHeight; //Asumiendo que es un triángulo equilátero
+            perimeter = 2 * rBase +  2 * rHeight;
         }
         public void calculateArea()
         {

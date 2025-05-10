@@ -10,35 +10,34 @@ namespace TareaFormas.figure_classes
     internal class Polygon : Control
     {
         private int pSideQuantity;
+        private float pApothem;
         private float pSide
         {
             get => inputA;
             set => inputA = value;
         }
-
-        private float pApothem
-        {
-            get => inputB;
-            set => inputB = value;
-        }
-
         public Polygon()
         {
             pSideQuantity = 0;
+            pApothem = 0.0f;
         }
 
-        public virtual void ReadData(TextBox txtInputA, TextBox txtInputB, ListBox lstInputSides)
+        private void computeApothem()
+        {
+            pApothem = pSide / (2 * (float)Math.Tan(Math.PI/ pSideQuantity));
+        }
+
+        public virtual void ReadData(TextBox txtInputSide, ListBox lstInputSides)
         {
             try
             {
-                inputA = float.Parse(txtInputA.Text);
-                inputB = float.Parse(txtInputB.Text);
+                pSide = float.Parse(txtInputSide.Text);
                 pSideQuantity = int.Parse(lstInputSides.SelectedItem.ToString());
 
-                if (inputA < 0 || inputB < 0 || pSideQuantity < 0)
+                if (pSide < 0 || pSideQuantity < 0)
                 {
                     MessageBox.Show("No pueden haber ingresos negativos", "mensaje de error");
-                    inputA = 0.0f; inputB = 0.0f;
+                    pSide = 0.0f;
                 }
 
                 if(pSideQuantity < 5)
@@ -46,6 +45,8 @@ namespace TareaFormas.figure_classes
                     MessageBox.Show("Inserte un mínimo de 5 lados para el polígono", "mensaje de error");
                     pSideQuantity = 0;
                 }
+
+                computeApothem();
             }
             catch
             {
@@ -53,17 +54,17 @@ namespace TareaFormas.figure_classes
             }
         }
 
-        public void initializeData(TextBox txtInputA, TextBox txtInputB, ListBox lstInputSides, TextBox txtPerimeter, TextBox txtArea)
+        public void initializeData(TextBox txtInputSide, ListBox lstInputSides, TextBox txtPerimeter, TextBox txtArea)
         {
-            inputA = 0.0f; inputB = 0.0f;
+            pSide = 0.0f; pApothem = 0.0f;
             pSideQuantity = 0;
             perimeter = 0.0f; area = 0.0f;
 
-            txtInputA.Text = ""; txtInputB.Text = "";
+            txtInputSide.Text = "";
             lstInputSides.SelectedIndex = 0;
             txtPerimeter.Text = ""; txtArea.Text = "";
 
-            txtInputA.Focus();
+            txtInputSide.Focus();
         }
 
         public void calculatePerimeter()
