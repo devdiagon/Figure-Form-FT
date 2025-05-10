@@ -14,12 +14,20 @@ namespace TareaFormas.form_views
     public partial class FrmPoligono : Form
     {
         private Polygon ObjPolygon = new Polygon();
-        private FrmCirculo frmPrev;
-        public FrmPoligono(FrmCirculo frmPrevious)
+        private static FrmPoligono instance;
+
+        public static FrmPoligono GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new FrmPoligono();
+            }
+            return instance;
+        }
+        private FrmPoligono()
         {
             InitializeComponent();
             adjustImage();
-            frmPrev = frmPrevious;
         }
 
         private void adjustImage()
@@ -40,11 +48,6 @@ namespace TareaFormas.form_views
             ObjPolygon.initializeData(txtInputA, txtInputB, lstInputSides, txtPerimeter, txtArea);
         }
 
-        private void FrmPoligono_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             ObjPolygon.initializeData(txtInputA, txtInputB, lstInputSides, txtPerimeter, txtArea);
@@ -61,12 +64,6 @@ namespace TareaFormas.form_views
             ObjPolygon.calculatePerimeter();
             ObjPolygon.calculateArea();
             ObjPolygon.PrintData(txtPerimeter, txtArea);
-        }
-
-        private void btnPrevForm_Click(object sender, EventArgs e)
-        {
-            frmPrev.Show();
-            this.Hide();
         }
     }
 }

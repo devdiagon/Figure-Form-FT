@@ -14,14 +14,20 @@ namespace TareaFormas.form_views
     public partial class FrmDeltoide : Form
     {
         private Deltoid ObjDeltoid = new Deltoid();
-        private FrmRombo frmPrev;
-        private FrmRomboide frmNext;
-        public FrmDeltoide(FrmRombo frmPrevious)
+        private static FrmDeltoide instance;
+
+        public static FrmDeltoide GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new FrmDeltoide();
+            }
+            return instance;
+        }
+        private FrmDeltoide()
         {
             InitializeComponent();
             adjustImage();
-            frmPrev = frmPrevious;
-            frmNext = new FrmRomboide(this);
         }
 
         private void adjustImage()
@@ -42,11 +48,6 @@ namespace TareaFormas.form_views
             ObjDeltoid.initializeData(txtInputA, txtInputB, txtInputSideA, txtInputSideB, txtPerimeter, txtArea);
         }
 
-        private void FrmDeltoide_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             ObjDeltoid.initializeData(txtInputA, txtInputB, txtInputSideA, txtInputSideB, txtPerimeter, txtArea);
@@ -63,18 +64,6 @@ namespace TareaFormas.form_views
             ObjDeltoid.calculatePerimeter();
             ObjDeltoid.calculateArea();
             ObjDeltoid.PrintData(txtPerimeter, txtArea);
-        }
-
-        private void btnNextForm_Click(object sender, EventArgs e)
-        {
-            frmNext.Show();
-            this.Hide();
-        }
-
-        private void btnPrevForm_Click(object sender, EventArgs e)
-        {
-            frmPrev.Show();
-            this.Hide();
         }
     }
 }

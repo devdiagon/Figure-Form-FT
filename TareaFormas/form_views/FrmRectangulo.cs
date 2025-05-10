@@ -22,7 +22,7 @@ namespace TareaFormas.form_views
             }
             return instance;
         }
-        public FrmRectangulo()
+        private FrmRectangulo()
         {
             InitializeComponent();
             adjustImage();

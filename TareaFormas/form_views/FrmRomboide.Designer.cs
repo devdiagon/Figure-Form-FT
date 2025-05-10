@@ -47,8 +47,6 @@
             this.lblArea = new System.Windows.Forms.Label();
             this.lblPerimeter = new System.Windows.Forms.Label();
             this.picImage = new System.Windows.Forms.PictureBox();
-            this.btnNextForm = new System.Windows.Forms.Button();
-            this.btnPrevForm = new System.Windows.Forms.Button();
             this.grbInputs.SuspendLayout();
             this.gbrProcess.SuspendLayout();
             this.gbrOutputs.SuspendLayout();
@@ -242,36 +240,12 @@
             this.picImage.TabIndex = 4;
             this.picImage.TabStop = false;
             // 
-            // btnNextForm
-            // 
-            this.btnNextForm.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextForm.Location = new System.Drawing.Point(678, 435);
-            this.btnNextForm.Name = "btnNextForm";
-            this.btnNextForm.Size = new System.Drawing.Size(107, 35);
-            this.btnNextForm.TabIndex = 3;
-            this.btnNextForm.Text = "Siguiente";
-            this.btnNextForm.UseVisualStyleBackColor = true;
-            this.btnNextForm.Click += new System.EventHandler(this.btnNextForm_Click);
-            // 
-            // btnPrevForm
-            // 
-            this.btnPrevForm.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevForm.Location = new System.Drawing.Point(535, 435);
-            this.btnPrevForm.Name = "btnPrevForm";
-            this.btnPrevForm.Size = new System.Drawing.Size(107, 35);
-            this.btnPrevForm.TabIndex = 5;
-            this.btnPrevForm.Text = "Anterior";
-            this.btnPrevForm.UseVisualStyleBackColor = true;
-            this.btnPrevForm.Click += new System.EventHandler(this.btnPrevForm_Click);
-            // 
             // FrmRomboide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(830, 511);
-            this.Controls.Add(this.btnPrevForm);
-            this.Controls.Add(this.btnNextForm);
             this.Controls.Add(this.picImage);
             this.Controls.Add(this.gbrOutputs);
             this.Controls.Add(this.gbrProcess);
@@ -279,7 +253,6 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "FrmRomboide";
             this.Text = "FrmRomboide";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmRomboide_FormClosed);
             this.Load += new System.EventHandler(this.FrmRomboide_Load);
             this.grbInputs.ResumeLayout(false);
             this.grbInputs.PerformLayout();
@@ -310,8 +283,6 @@
         private System.Windows.Forms.Label lblInputB;
         private System.Windows.Forms.Label lblInputA;
         private System.Windows.Forms.PictureBox picImage;
-        private System.Windows.Forms.Button btnNextForm;
-        private System.Windows.Forms.Button btnPrevForm;
         private System.Windows.Forms.TextBox txtInputHeight;
         private System.Windows.Forms.Label lblInputHeight;
     }

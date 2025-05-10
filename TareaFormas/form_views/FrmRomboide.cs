@@ -14,14 +14,20 @@ namespace TareaFormas.form_views
     public partial class FrmRomboide : Form
     {
         private Rhomboid ObjRhomboid = new Rhomboid();
-        private FrmDeltoide frmPrev;
-        private FrmTrapecio frmNext;
-        public FrmRomboide(FrmDeltoide frmPrevious)
+        private static FrmRomboide instance;
+        public static FrmRomboide GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new FrmRomboide();
+            }
+            return instance;
+        }
+
+        private FrmRomboide()
         {
             InitializeComponent();
             adjustImage();
-            frmPrev = frmPrevious;
-            frmNext = new FrmTrapecio(this);
         }
 
         private void adjustImage()
@@ -42,11 +48,6 @@ namespace TareaFormas.form_views
             ObjRhomboid.initializeData(txtInputA, txtInputB, txtInputHeight, txtPerimeter, txtArea);
         }
 
-        private void FrmRomboide_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             ObjRhomboid.initializeData(txtInputA, txtInputB, txtInputHeight, txtPerimeter, txtArea);
@@ -63,18 +64,6 @@ namespace TareaFormas.form_views
             ObjRhomboid.calculatePerimeter();
             ObjRhomboid.calculateArea();
             ObjRhomboid.PrintData(txtPerimeter, txtArea);
-        }
-
-        private void btnNextForm_Click(object sender, EventArgs e)
-        {
-            frmNext.Show();
-            this.Hide();
-        }
-
-        private void btnPrevForm_Click(object sender, EventArgs e)
-        {
-            frmPrev.Show();
-            this.Hide();
         }
     }
 }

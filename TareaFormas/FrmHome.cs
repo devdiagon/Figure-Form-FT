@@ -16,6 +16,8 @@ namespace TareaFormas
         public FrmHome()
         {
             InitializeComponent();
+            FrmTriangulo frmTriangulo = FrmTriangulo.GetInstance();
+            placeForm(frmTriangulo);
         }
 
         private void placeForm(Form formulario)
@@ -44,6 +46,59 @@ namespace TareaFormas
         {
             FrmRectangulo frmRectangulo = FrmRectangulo.GetInstance();
             placeForm (frmRectangulo);
+        }
+
+        private void circuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCirculo frmCirculo = FrmCirculo.GetInstance();
+            placeForm(frmCirculo);
+        }
+
+        private void elipseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmElipse frmElipse = FrmElipse.GetInstance();
+            placeForm(frmElipse);
+        }
+
+        private void poligonosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPoligono frmPoligono = FrmPoligono.GetInstance();
+            placeForm(frmPoligono);
+        }
+
+        private void romboToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRombo frmRombo = FrmRombo.GetInstance();
+            placeForm(frmRombo);
+        }
+
+        private void romboideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRomboide frmRomboide = FrmRomboide.GetInstance();
+            placeForm(frmRomboide);
+        }
+
+        private void trapecioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTrapecio frmTrapecio = FrmTrapecio.GetInstance();
+            placeForm(frmTrapecio);
+        }
+
+        private void trapezoideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deltoideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDeltoide frmDeltoide = FrmDeltoide.GetInstance();
+            placeForm(frmDeltoide);
+        }
+
+        private void trapecioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmTrapecio frmTrapecio = FrmTrapecio.GetInstance();
+            placeForm(frmTrapecio);
         }
     }
 }

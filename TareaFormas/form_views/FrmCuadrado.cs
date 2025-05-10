@@ -24,7 +24,7 @@ namespace TareaFormas.form_views
             }
             return instance;
         }
-        public FrmCuadrado()
+        private FrmCuadrado()
         {
             InitializeComponent();
             adjustImage();

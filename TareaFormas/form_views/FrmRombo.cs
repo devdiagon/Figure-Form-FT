@@ -13,14 +13,19 @@ namespace TareaFormas.form_views
     public partial class FrmRombo : Form
     {
         private Diamond ObjDiamond = new Diamond();
-        private FrmDeltoide frmNext;
-        private FrmRectangulo frmPrev;
-        public FrmRombo(FrmRectangulo frmPrevious)
+        private static FrmRombo instance;
+        public static FrmRombo GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new FrmRombo();
+            }
+            return instance;
+        }
+        private FrmRombo()
         {
             InitializeComponent();
             adjustImage();
-            frmPrev = frmPrevious;
-            frmNext = new FrmDeltoide(this);
         }
 
         private void adjustImage()
@@ -40,39 +45,20 @@ namespace TareaFormas.form_views
             ObjDiamond.initializeData(txtInputA, txtInputB, txtInputSide, txtPerimeter, txtArea);
         }
 
-        private void FrmRombo_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             ObjDiamond.initializeData(txtInputA, txtInputB, txtInputSide, txtPerimeter, txtArea);
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             ObjDiamond.CloseForm(this);
         }
-
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             ObjDiamond.ReadData(txtInputA, txtInputB, txtInputSide);
             ObjDiamond.calculatePerimeter();
             ObjDiamond.calculateArea();
             ObjDiamond.PrintData(txtPerimeter, txtArea);
-        }
-
-        private void btnNextForm_Click(object sender, EventArgs e)
-        {
-            frmNext.Show();
-            this.Hide();
-        }
-
-        private void btnPrevForm_Click(object sender, EventArgs e)
-        {
-            frmPrev.Show();
-            this.Hide();
         }
     }
 }

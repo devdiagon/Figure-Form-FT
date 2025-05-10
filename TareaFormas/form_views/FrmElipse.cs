@@ -13,14 +13,20 @@ namespace TareaFormas.form_views
     public partial class FrmElipse : Form
     {
         private Elipse ObjElipse = new Elipse();
-        private FrmTrapecio frmPrev;
-        private FrmCirculo frmNext;
-        public FrmElipse(FrmTrapecio frmPrevious)
+        private static FrmElipse instance;
+
+        public static FrmElipse GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new FrmElipse();
+            }
+            return instance;
+        }
+        private FrmElipse()
         {
             InitializeComponent();
             adjustImage();
-            frmPrev = frmPrevious;
-            frmNext = new FrmCirculo(this);
         }
 
         private void adjustImage()
@@ -41,11 +47,6 @@ namespace TareaFormas.form_views
             ObjElipse.initializeData(txtInputA, txtInputB, txtPerimeter, txtArea);
         }
 
-        private void FrmElipse_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             ObjElipse.initializeData(txtInputA, txtInputB, txtPerimeter, txtArea);
@@ -62,18 +63,6 @@ namespace TareaFormas.form_views
             ObjElipse.calculatePerimeter();
             ObjElipse.calculateArea();
             ObjElipse.PrintData(txtPerimeter, txtArea);
-        }
-
-        private void btnNextForm_Click(object sender, EventArgs e)
-        {
-            frmNext.Show();
-            this.Hide();
-        }
-
-        private void btnPrevForm_Click(object sender, EventArgs e)
-        {
-            frmPrev.Show();
-            this.Hide();
         }
     }
 }

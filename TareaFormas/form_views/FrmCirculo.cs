@@ -13,15 +13,21 @@ namespace TareaFormas.form_views
 {
     public partial class FrmCirculo : Form
     {
-        private FrmElipse frmPrev;
-        private FrmPoligono frmNext;
         private Circle ObjCircle = new Circle();
-        public FrmCirculo(FrmElipse frmPrevious)
+        private static FrmCirculo instance;
+
+        public static FrmCirculo GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new FrmCirculo();
+            }
+            return instance;
+        }
+        private FrmCirculo()
         {
             InitializeComponent();
             adjustImage();
-            frmPrev = frmPrevious;
-            frmNext = new FrmPoligono(this);
         }
 
         private void adjustImage()
@@ -42,11 +48,6 @@ namespace TareaFormas.form_views
             ObjCircle.initializeData(txtInputA, txtPerimeter, txtArea);
         }
 
-        private void FrmCirculo_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             ObjCircle.initializeData(txtInputA, txtPerimeter, txtArea);
@@ -63,18 +64,6 @@ namespace TareaFormas.form_views
             ObjCircle.calculatePerimeter();
             ObjCircle.calculateArea();
             ObjCircle.PrintData(txtPerimeter, txtArea);
-        }
-
-        private void btnNextForm_Click(object sender, EventArgs e)
-        {
-            frmNext.Show();
-            this.Hide();
-        }
-
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
-            frmPrev.Show();
-            this.Hide();
         }
     }
 }

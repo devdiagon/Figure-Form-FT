@@ -14,14 +14,19 @@ namespace TareaFormas.form_views
     public partial class FrmTrapecio : Form
     {
         private Trapeze ObjTrapeze = new Trapeze();
-        private FrmRomboide frmPrev;
-        private FrmElipse frmNext;
-        public FrmTrapecio(FrmRomboide frmPrevious)
+        private static FrmTrapecio instance;
+        public static FrmTrapecio GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new FrmTrapecio();
+            }
+            return instance;
+        }
+        public FrmTrapecio()
         {
             InitializeComponent();
             adjustImage();
-            frmPrev = frmPrevious;
-            frmNext = new FrmElipse(this);
         }
 
         private void adjustImage()
@@ -42,11 +47,6 @@ namespace TareaFormas.form_views
             ObjTrapeze.initializeData(txtInputA, txtInputB, txtInputHeight, txtInputSide1, txtInputSide2, txtPerimeter, txtArea);
         }
 
-        private void FrmTrapecio_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             ObjTrapeze.initializeData(txtInputA, txtInputB, txtInputHeight, txtInputSide1, txtInputSide2, txtPerimeter, txtArea);
@@ -63,18 +63,6 @@ namespace TareaFormas.form_views
             ObjTrapeze.calculatePerimeter();
             ObjTrapeze.calculateArea();
             ObjTrapeze.PrintData(txtPerimeter, txtArea);
-        }
-
-        private void btnNextForm_Click(object sender, EventArgs e)
-        {
-            frmNext.Show();
-            this.Hide();
-        }
-
-        private void btnPrevForm_Click(object sender, EventArgs e)
-        {
-            frmPrev.Show();
-            this.Hide();
         }
     }
 }
