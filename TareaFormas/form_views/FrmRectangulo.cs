@@ -13,14 +13,19 @@ namespace TareaFormas.form_views
     public partial class FrmRectangulo : Form
     {
         private Rectangle ObjRectangle = new Rectangle();
-        private FrmCuadrado frmPrev;
-        private FrmRombo frmNext;
-        public FrmRectangulo(FrmCuadrado frmPrevious)
+        private static FrmRectangulo instance;
+        public static FrmRectangulo GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new FrmRectangulo();
+            }
+            return instance;
+        }
+        public FrmRectangulo()
         {
             InitializeComponent();
             adjustImage();
-            frmPrev = frmPrevious;
-            frmNext = new FrmRombo(this);
         }
 
         private void adjustImage()
@@ -41,11 +46,6 @@ namespace TareaFormas.form_views
             ObjRectangle.initializeData(txtInputA, txtInputB, txtPerimeter, txtArea);
         }
 
-        private void FrmRectangulo_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             ObjRectangle.initializeData(txtInputA, txtInputB, txtPerimeter, txtArea);
@@ -62,18 +62,6 @@ namespace TareaFormas.form_views
             ObjRectangle.calculatePerimeter();
             ObjRectangle.calculateArea();
             ObjRectangle.PrintData(txtPerimeter, txtArea);
-        }
-
-        private void btnNextForm_Click(object sender, EventArgs e)
-        {
-            frmNext.Show();
-            this.Hide();
-        }
-
-        private void btnPrevForm_Click(object sender, EventArgs e)
-        {
-            frmPrev.Show();
-            this.Hide();
         }
     }
 }

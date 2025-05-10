@@ -39,5 +39,11 @@ namespace TareaFormas
             FrmCuadrado frmCuadrado = FrmCuadrado.GetInstance();
             placeForm(frmCuadrado);
         }
+
+        private void rectanguloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRectangulo frmRectangulo = FrmRectangulo.GetInstance();
+            placeForm (frmRectangulo);
+        }
     }
 }

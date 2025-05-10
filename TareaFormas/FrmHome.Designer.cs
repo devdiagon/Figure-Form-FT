@@ -86,6 +86,7 @@
             this.rectanguloToolStripMenuItem.Name = "rectanguloToolStripMenuItem";
             this.rectanguloToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.rectanguloToolStripMenuItem.Text = "Rectangulo";
+            this.rectanguloToolStripMenuItem.Click += new System.EventHandler(this.rectanguloToolStripMenuItem_Click);
             // 
             // curvasToolStripMenuItem
             // 
