@@ -45,12 +45,12 @@ namespace TareaFormas.form_views
 
         private void FrmTriangulo_Load(object sender, EventArgs e)
         {
-            ObjTriangle.initializeData(txtInputA, txtInputB, txtPerimeter, txtArea);
+            ObjTriangle.initializeData(txtInputA, txtInputB, txtInputC, txtPerimeter, txtArea);
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            ObjTriangle.initializeData(txtInputA, txtInputB, txtPerimeter, txtArea);
+            ObjTriangle.initializeData(txtInputA, txtInputB, txtInputC, txtPerimeter, txtArea);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace TareaFormas.form_views
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            ObjTriangle.ReadData(txtInputA, txtInputB);
+            ObjTriangle.ReadData(txtInputA, txtInputB, txtInputC);
             ObjTriangle.calculatePerimeter();
             ObjTriangle.calculateArea();
             ObjTriangle.PrintData(txtPerimeter, txtArea);
