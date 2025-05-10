@@ -117,21 +117,21 @@
             // 
             this.lblInputB.AutoSize = true;
             this.lblInputB.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInputB.Location = new System.Drawing.Point(26, 83);
+            this.lblInputB.Location = new System.Drawing.Point(38, 83);
             this.lblInputB.Name = "lblInputB";
-            this.lblInputB.Size = new System.Drawing.Size(149, 20);
+            this.lblInputB.Size = new System.Drawing.Size(137, 20);
             this.lblInputB.TabIndex = 5;
-            this.lblInputB.Text = "Lado inclinado (b):";
+            this.lblInputB.Text = "Lado oblicuo (b):";
             // 
             // lblInputA
             // 
             this.lblInputA.AutoSize = true;
             this.lblInputA.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInputA.Location = new System.Drawing.Point(99, 40);
+            this.lblInputA.Location = new System.Drawing.Point(58, 40);
             this.lblInputA.Name = "lblInputA";
-            this.lblInputA.Size = new System.Drawing.Size(76, 20);
+            this.lblInputA.Size = new System.Drawing.Size(117, 20);
             this.lblInputA.TabIndex = 4;
-            this.lblInputA.Text = "Base (a):";
+            this.lblInputA.Text = "Lado base (a):";
             // 
             // gbrProcess
             // 

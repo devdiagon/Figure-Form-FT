@@ -26,19 +26,36 @@ namespace TareaFormas.figure_classes
             rHeight = 0.0f;
         }
 
-        public virtual void ReadData(TextBox txtInputA, TextBox txtInputB, TextBox txtInputHeight)
+        public virtual void ReadData(TextBox txtInputSideA, TextBox txtInputSideB, TextBox txtInputHeight)
         {
             try
             {
-                inputA = float.Parse(txtInputA.Text);
-                inputB = float.Parse(txtInputB.Text);
+                rSideA = float.Parse(txtInputSideA.Text);
+                rSideB = float.Parse(txtInputSideB.Text);
                 rHeight = float.Parse(txtInputHeight.Text);
 
-                if (inputA < 0 || inputB < 0 || rHeight < 0)
+                if (rSideA < 0 || rSideB < 0 || rHeight < 0)
                 {
                     MessageBox.Show("No pueden haber ingresos negativos", "mensaje de error");
-                    inputA = 0.0f; inputB = 0.0f;
+                    rSideA = 0.0f; rSideB = 0.0f;
                     rHeight = 0.0f;
+                    return;
+                }
+
+                if (rSideA == rSideB)
+                {
+                    MessageBox.Show("Un romboide tiene sus lados (a) y (b) diferentes", "mensaje de error");
+                    rSideA = 0.0f; rSideB = 0.0f;
+                    rHeight = 0.0f;
+                    return;
+                }
+
+                if (rSideB <= rHeight)
+                {
+                    MessageBox.Show("El lado oblicuo (b) debe ser mayor que la altura", "mensaje de error");
+                    rSideA = 0.0f; rSideB = 0.0f;
+                    rHeight = 0.0f;
+                    return;
                 }
             }
             catch
@@ -47,17 +64,17 @@ namespace TareaFormas.figure_classes
             }
         }
 
-        public void initializeData(TextBox txtInputA, TextBox txtInputB, TextBox txtInputHeight, TextBox txtPerimeter, TextBox txtArea)
+        public void initializeData(TextBox txtInputSideA, TextBox txtInputSideB, TextBox txtInputHeight, TextBox txtPerimeter, TextBox txtArea)
         {
-            inputA = 0.0f; inputB = 0.0f;
+            rSideA = 0.0f; rSideB = 0.0f;
             rHeight = 0.0f;
             perimeter = 0.0f; area = 0.0f;
 
-            txtInputA.Text = ""; txtInputB.Text = "";
+            txtInputSideA.Text = ""; txtInputSideB.Text = "";
             txtInputHeight.Text = "";
             txtPerimeter.Text = ""; txtArea.Text = "";
 
-            txtInputA.Focus();
+            txtInputSideA.Focus();
         }
 
         public void calculatePerimeter()
