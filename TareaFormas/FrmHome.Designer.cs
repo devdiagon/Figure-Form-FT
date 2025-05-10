@@ -31,12 +31,12 @@
             this.mnsNav = new System.Windows.Forms.MenuStrip();
             this.trianguloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuadranguloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.curvasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.poligonosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.circuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.elipseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuadradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rectanguloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.curvasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.circuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.elipseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.poligonosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlWrapper = new System.Windows.Forms.Panel();
             this.mnsNav.SuspendLayout();
             this.SuspendLayout();
@@ -51,17 +51,17 @@
             this.cuadranguloToolStripMenuItem,
             this.curvasToolStripMenuItem,
             this.poligonosToolStripMenuItem});
-            this.mnsNav.Location = new System.Drawing.Point(914, 0);
+            this.mnsNav.Location = new System.Drawing.Point(883, 0);
             this.mnsNav.Name = "mnsNav";
             this.mnsNav.Padding = new System.Windows.Forms.Padding(8, 12, 0, 2);
-            this.mnsNav.Size = new System.Drawing.Size(127, 527);
+            this.mnsNav.Size = new System.Drawing.Size(158, 527);
             this.mnsNav.TabIndex = 0;
             this.mnsNav.Text = "menuStrip1";
             // 
             // trianguloToolStripMenuItem
             // 
             this.trianguloToolStripMenuItem.Name = "trianguloToolStripMenuItem";
-            this.trianguloToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
+            this.trianguloToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.trianguloToolStripMenuItem.Text = "Triángulo";
             this.trianguloToolStripMenuItem.Click += new System.EventHandler(this.trianguloToolStripMenuItem_Click);
             // 
@@ -71,41 +71,15 @@
             this.cuadradoToolStripMenuItem,
             this.rectanguloToolStripMenuItem});
             this.cuadranguloToolStripMenuItem.Name = "cuadranguloToolStripMenuItem";
-            this.cuadranguloToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
+            this.cuadranguloToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.cuadranguloToolStripMenuItem.Text = "Cuadrángulo";
-            // 
-            // curvasToolStripMenuItem
-            // 
-            this.curvasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.circuloToolStripMenuItem,
-            this.elipseToolStripMenuItem});
-            this.curvasToolStripMenuItem.Name = "curvasToolStripMenuItem";
-            this.curvasToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
-            this.curvasToolStripMenuItem.Text = "Curvas";
-            // 
-            // poligonosToolStripMenuItem
-            // 
-            this.poligonosToolStripMenuItem.Name = "poligonosToolStripMenuItem";
-            this.poligonosToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
-            this.poligonosToolStripMenuItem.Text = "Polígonos";
-            // 
-            // circuloToolStripMenuItem
-            // 
-            this.circuloToolStripMenuItem.Name = "circuloToolStripMenuItem";
-            this.circuloToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.circuloToolStripMenuItem.Text = "Circulo";
-            // 
-            // elipseToolStripMenuItem
-            // 
-            this.elipseToolStripMenuItem.Name = "elipseToolStripMenuItem";
-            this.elipseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.elipseToolStripMenuItem.Text = "Elipse";
             // 
             // cuadradoToolStripMenuItem
             // 
             this.cuadradoToolStripMenuItem.Name = "cuadradoToolStripMenuItem";
             this.cuadradoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.cuadradoToolStripMenuItem.Text = "Cuadrado";
+            this.cuadradoToolStripMenuItem.Click += new System.EventHandler(this.cuadradoToolStripMenuItem_Click);
             // 
             // rectanguloToolStripMenuItem
             // 
@@ -113,12 +87,39 @@
             this.rectanguloToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.rectanguloToolStripMenuItem.Text = "Rectangulo";
             // 
+            // curvasToolStripMenuItem
+            // 
+            this.curvasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.circuloToolStripMenuItem,
+            this.elipseToolStripMenuItem});
+            this.curvasToolStripMenuItem.Name = "curvasToolStripMenuItem";
+            this.curvasToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
+            this.curvasToolStripMenuItem.Text = "Curvas";
+            // 
+            // circuloToolStripMenuItem
+            // 
+            this.circuloToolStripMenuItem.Name = "circuloToolStripMenuItem";
+            this.circuloToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.circuloToolStripMenuItem.Text = "Circulo";
+            // 
+            // elipseToolStripMenuItem
+            // 
+            this.elipseToolStripMenuItem.Name = "elipseToolStripMenuItem";
+            this.elipseToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.elipseToolStripMenuItem.Text = "Elipse";
+            // 
+            // poligonosToolStripMenuItem
+            // 
+            this.poligonosToolStripMenuItem.Name = "poligonosToolStripMenuItem";
+            this.poligonosToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
+            this.poligonosToolStripMenuItem.Text = "Polígonos";
+            // 
             // pnlWrapper
             // 
             this.pnlWrapper.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlWrapper.Location = new System.Drawing.Point(0, 0);
             this.pnlWrapper.Name = "pnlWrapper";
-            this.pnlWrapper.Size = new System.Drawing.Size(914, 527);
+            this.pnlWrapper.Size = new System.Drawing.Size(883, 527);
             this.pnlWrapper.TabIndex = 2;
             // 
             // FrmHome

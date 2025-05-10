@@ -13,15 +13,21 @@ namespace TareaFormas.form_views
 {
     public partial class FrmCuadrado : Form
     {
-        private FrmTriangulo frmPrev;
-        private FrmRectangulo frmNext;
         private Square ObjSquare = new Square();
-        public FrmCuadrado(FrmTriangulo frmPrevious)
+        private static FrmCuadrado instance;
+
+        public static FrmCuadrado GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new FrmCuadrado();
+            }
+            return instance;
+        }
+        public FrmCuadrado()
         {
             InitializeComponent();
             adjustImage();
-            frmPrev = frmPrevious;
-            frmNext = new FrmRectangulo(this);
         }
 
         private void adjustImage()
@@ -42,11 +48,6 @@ namespace TareaFormas.form_views
             ObjSquare.initializeData(txtInputA, txtPerimeter, txtArea);
         }
 
-        private void FrmCuadrado_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             ObjSquare.initializeData(txtInputA, txtPerimeter, txtArea);
@@ -63,18 +64,6 @@ namespace TareaFormas.form_views
             ObjSquare.calculatePerimeter();
             ObjSquare.calculateArea();
             ObjSquare.PrintData(txtPerimeter, txtArea);
-        }
-
-        private void btnNextForm_Click(object sender, EventArgs e)
-        {
-            frmNext.Show();
-            this.Hide();
-        }
-
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
-            frmPrev.Show();
-            this.Hide();
         }
     }
 }

@@ -65,10 +65,5 @@ namespace TareaFormas.form_views
             ObjTriangle.calculateArea();
             ObjTriangle.PrintData(txtPerimeter, txtArea);
         }
-
-        private void btnNextForm_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
     }
 }
