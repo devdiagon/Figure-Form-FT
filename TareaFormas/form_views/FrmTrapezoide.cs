@@ -11,19 +11,19 @@ using TareaFormas.figure_classes;
 
 namespace TareaFormas.form_views
 {
-    public partial class FrmTrapecio : Form
+    public partial class FrmTrapezoide : Form
     {
-        private Trapeze ObjTrapeze = new Trapeze();
-        private static FrmTrapecio instance;
-        public static FrmTrapecio GetInstance()
+        private Trapezoid ObjTrapezoid = new Trapezoid();
+        private static FrmTrapezoide instance;
+        public static FrmTrapezoide GetInstance()
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new FrmTrapecio();
+                instance = new FrmTrapezoide();
             }
             return instance;
         }
-        private FrmTrapecio()
+        private FrmTrapezoide()
         {
             InitializeComponent();
             adjustImage();
@@ -42,27 +42,27 @@ namespace TareaFormas.form_views
             }
         }
 
-        private void FrmTrapecio_Load(object sender, EventArgs e)
+        private void FrmTrapezoide_Load(object sender, EventArgs e)
         {
-            ObjTrapeze.initializeData(txtInputA, txtInputB, txtInputSide1, txtInputSide2, txtPerimeter, txtArea);
+            ObjTrapezoid.initializeData(txtInputA, txtInputB, txtInputC, txtInputD, txtAngleTheta, txtAnglePhi, txtPerimeter, txtArea);
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            ObjTrapeze.initializeData(txtInputA, txtInputB, txtInputSide1, txtInputSide2, txtPerimeter, txtArea);
+            ObjTrapezoid.initializeData(txtInputA, txtInputB, txtInputC, txtInputD, txtAngleTheta, txtAnglePhi, txtPerimeter, txtArea);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            ObjTrapeze.CloseForm(this);
+            ObjTrapezoid.CloseForm(this);
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            ObjTrapeze.ReadData(txtInputA, txtInputB, txtInputSide1, txtInputSide2);
-            ObjTrapeze.calculatePerimeter();
-            ObjTrapeze.calculateArea();
-            ObjTrapeze.PrintData(txtPerimeter, txtArea);
+            ObjTrapezoid.ReadData(txtInputA, txtInputB, txtInputC, txtInputD, txtAngleTheta, txtAnglePhi);
+            ObjTrapezoid.calculatePerimeter();
+            ObjTrapezoid.calculateArea();
+            ObjTrapezoid.PrintData(txtPerimeter, txtArea);
         }
     }
 }

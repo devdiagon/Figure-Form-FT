@@ -100,5 +100,11 @@ namespace TareaFormas
             FrmTrapecio frmTrapecio = FrmTrapecio.GetInstance();
             placeForm(frmTrapecio);
         }
+
+        private void trapezoideToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmTrapezoide frmTrapezoide = FrmTrapezoide.GetInstance();
+            placeForm(frmTrapezoide);
+        }
     }
 }
