@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TareaFormas.figure_classes
 {
@@ -21,6 +22,40 @@ namespace TareaFormas.figure_classes
         }
 
         public Elipse() { }
+
+        public virtual void ReadData(TextBox txtInputA, TextBox txtInputB)
+        {
+            try
+            {
+                eAxisa = float.Parse(txtInputA.Text);
+                eAxisb = float.Parse(txtInputB.Text);
+
+                if (eAxisa <= 0 || eAxisb <= 0)
+                {
+                    MessageBox.Show("Los semiejes no pueden ser negativos o cero", "mensaje de error");
+                    eAxisa = 0.0f; eAxisb = 0.0f;
+                    return;
+                }
+
+                if(eAxisa < eAxisb)
+                {
+                    MessageBox.Show("El semieje 'a' tiene que ser mayor que el semieje 'b'", "mensaje de error");
+                    eAxisa = 0.0f; eAxisb = 0.0f;
+                    return;
+                }
+
+                if (eAxisa == eAxisb)
+                {
+                    MessageBox.Show("Una elipse tiene semiejes de valores diferentes", "mensaje de error");
+                    eAxisa = 0.0f; eAxisb = 0.0f;
+                    return;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ingreso no válido...", "Mensaje de error");
+            }
+        }
 
         public void calculatePerimeter()
         {
