@@ -26,40 +26,41 @@ namespace TareaFormas.figure_classes
             dSide = 0.0f;
         }
 
-        public virtual void ReadData(TextBox txtInputA, TextBox txtInputB, TextBox txtInputSide)
+        private void computeSide()
+        {
+            dSide = (float)Math.Sqrt(Math.Pow(dDiagD, 2) + Math.Pow(dDiagd, 2)) / 2;
+        }
+
+        public virtual void ReadData(TextBox txtInputA, TextBox txtInputB)
         {
             try
             {
-                inputA = float.Parse(txtInputA.Text);
-                inputB = float.Parse(txtInputB.Text);
-                dSide = float.Parse(txtInputSide.Text);
+                dDiagD = float.Parse(txtInputA.Text);
+                dDiagd = float.Parse(txtInputB.Text);
 
-                if (inputA < 0 || inputB < 0 || dSide < 0)
+                if (dDiagD < 0 || dDiagd < 0)
                 {
                     MessageBox.Show("No pueden haber ingresos negativos", "mensaje de error");
-                    inputA = 0.0f; inputB = 0.0f;
+                    dDiagD = 0.0f; dDiagd = 0.0f;
                     dSide = 0.0f;
+                    return;
                 }
+
+                if (dDiagD == dDiagd)
+                {
+                    MessageBox.Show("Un rombo debe tener diagonales diferentes", "mensaje de error");
+                    dDiagD = 0.0f; dDiagd = 0.0f;
+                    dSide = 0.0f;
+                    return;
+                }
+
+                computeSide();
             }
             catch
             {
                 MessageBox.Show("Ingreso no válido...", "Mensaje de error");
             }
         }
-
-        public void initializeData(TextBox txtInputA, TextBox txtInputB, TextBox txtInputSide, TextBox txtPerimeter, TextBox txtArea)
-        {
-            inputA = 0.0f; inputB = 0.0f;
-            dSide = 0.0f;
-            perimeter = 0.0f; area = 0.0f;
-
-            txtInputA.Text = ""; txtInputB.Text = "";
-            txtInputSide.Text = "";
-            txtPerimeter.Text = ""; txtArea.Text = "";
-
-            txtInputA.Focus();
-        }
-
         public void calculatePerimeter()
         {
             perimeter = 4 * dSide;

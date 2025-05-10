@@ -42,12 +42,12 @@ namespace TareaFormas.form_views
         }
         private void FrmRombo_Load(object sender, EventArgs e)
         {
-            ObjDiamond.initializeData(txtInputA, txtInputB, txtInputSide, txtPerimeter, txtArea);
+            ObjDiamond.initializeData(txtInputA, txtInputB, txtPerimeter, txtArea);
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            ObjDiamond.initializeData(txtInputA, txtInputB, txtInputSide, txtPerimeter, txtArea);
+            ObjDiamond.initializeData(txtInputA, txtInputB, txtPerimeter, txtArea);
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -55,7 +55,7 @@ namespace TareaFormas.form_views
         }
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            ObjDiamond.ReadData(txtInputA, txtInputB, txtInputSide);
+            ObjDiamond.ReadData(txtInputA, txtInputB);
             ObjDiamond.calculatePerimeter();
             ObjDiamond.calculateArea();
             ObjDiamond.PrintData(txtPerimeter, txtArea);
