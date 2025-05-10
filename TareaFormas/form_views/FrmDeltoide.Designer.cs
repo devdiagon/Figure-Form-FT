@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDeltoide));
             this.lblTitle = new System.Windows.Forms.Label();
             this.grbInputs = new System.Windows.Forms.GroupBox();
+            this.txtInputAngle = new System.Windows.Forms.TextBox();
+            this.lblInputAngle = new System.Windows.Forms.Label();
             this.txtInputSideB = new System.Windows.Forms.TextBox();
             this.lblInputSideB = new System.Windows.Forms.Label();
             this.txtInputSideA = new System.Windows.Forms.TextBox();
@@ -45,8 +47,6 @@
             this.lblArea = new System.Windows.Forms.Label();
             this.lblPerimeter = new System.Windows.Forms.Label();
             this.picImage = new System.Windows.Forms.PictureBox();
-            this.lblInputAngle = new System.Windows.Forms.Label();
-            this.txtInputAngle = new System.Windows.Forms.TextBox();
             this.grbInputs.SuspendLayout();
             this.gbrProcess.SuspendLayout();
             this.gbrOutputs.SuspendLayout();
@@ -78,6 +78,24 @@
             this.grbInputs.TabIndex = 1;
             this.grbInputs.TabStop = false;
             this.grbInputs.Text = "Entradas";
+            // 
+            // txtInputAngle
+            // 
+            this.txtInputAngle.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInputAngle.Location = new System.Drawing.Point(105, 165);
+            this.txtInputAngle.Name = "txtInputAngle";
+            this.txtInputAngle.Size = new System.Drawing.Size(206, 28);
+            this.txtInputAngle.TabIndex = 12;
+            // 
+            // lblInputAngle
+            // 
+            this.lblInputAngle.AutoSize = true;
+            this.lblInputAngle.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputAngle.Location = new System.Drawing.Point(25, 127);
+            this.lblInputAngle.Name = "lblInputAngle";
+            this.lblInputAngle.Size = new System.Drawing.Size(367, 20);
+            this.lblInputAngle.TabIndex = 11;
+            this.lblInputAngle.Text = "Ánuglo entre (a) y (b) en grados entre 0° y 180°:";
             // 
             // txtInputSideB
             // 
@@ -135,7 +153,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(85, 28);
             this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Salir";
+            this.btnExit.Text = "Cerrar";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -221,24 +239,6 @@
             this.picImage.Size = new System.Drawing.Size(285, 260);
             this.picImage.TabIndex = 4;
             this.picImage.TabStop = false;
-            // 
-            // lblInputAngle
-            // 
-            this.lblInputAngle.AutoSize = true;
-            this.lblInputAngle.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInputAngle.Location = new System.Drawing.Point(25, 127);
-            this.lblInputAngle.Name = "lblInputAngle";
-            this.lblInputAngle.Size = new System.Drawing.Size(367, 20);
-            this.lblInputAngle.TabIndex = 11;
-            this.lblInputAngle.Text = "Ánuglo entre (a) y (b) en grados entre 0° y 180°:";
-            // 
-            // txtInputAngle
-            // 
-            this.txtInputAngle.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInputAngle.Location = new System.Drawing.Point(105, 165);
-            this.txtInputAngle.Name = "txtInputAngle";
-            this.txtInputAngle.Size = new System.Drawing.Size(206, 28);
-            this.txtInputAngle.TabIndex = 12;
             // 
             // FrmDeltoide
             // 

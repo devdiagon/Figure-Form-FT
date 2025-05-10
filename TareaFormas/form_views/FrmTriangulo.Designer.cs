@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTriangulo));
             this.lblTitle = new System.Windows.Forms.Label();
             this.grbInputs = new System.Windows.Forms.GroupBox();
+            this.txtInputC = new System.Windows.Forms.TextBox();
+            this.lblInputC = new System.Windows.Forms.Label();
             this.txtInputB = new System.Windows.Forms.TextBox();
             this.txtInputA = new System.Windows.Forms.TextBox();
             this.lblInputB = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.lblArea = new System.Windows.Forms.Label();
             this.lblPerimeter = new System.Windows.Forms.Label();
             this.picImage = new System.Windows.Forms.PictureBox();
-            this.txtInputC = new System.Windows.Forms.TextBox();
-            this.lblInputC = new System.Windows.Forms.Label();
             this.grbInputs.SuspendLayout();
             this.gbrProcess.SuspendLayout();
             this.gbrOutputs.SuspendLayout();
@@ -78,6 +78,24 @@
             this.grbInputs.TabIndex = 1;
             this.grbInputs.TabStop = false;
             this.grbInputs.Text = "Entradas";
+            // 
+            // txtInputC
+            // 
+            this.txtInputC.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInputC.Location = new System.Drawing.Point(140, 123);
+            this.txtInputC.Name = "txtInputC";
+            this.txtInputC.Size = new System.Drawing.Size(206, 28);
+            this.txtInputC.TabIndex = 8;
+            // 
+            // lblInputC
+            // 
+            this.lblInputC.AutoSize = true;
+            this.lblInputC.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputC.Location = new System.Drawing.Point(45, 126);
+            this.lblInputC.Name = "lblInputC";
+            this.lblInputC.Size = new System.Drawing.Size(76, 20);
+            this.lblInputC.TabIndex = 7;
+            this.lblInputC.Text = "Lado (c):";
             // 
             // txtInputB
             // 
@@ -135,7 +153,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(85, 28);
             this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Salir";
+            this.btnExit.Text = "Cerrar";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -221,24 +239,6 @@
             this.picImage.Size = new System.Drawing.Size(285, 260);
             this.picImage.TabIndex = 4;
             this.picImage.TabStop = false;
-            // 
-            // txtInputC
-            // 
-            this.txtInputC.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInputC.Location = new System.Drawing.Point(140, 123);
-            this.txtInputC.Name = "txtInputC";
-            this.txtInputC.Size = new System.Drawing.Size(206, 28);
-            this.txtInputC.TabIndex = 8;
-            // 
-            // lblInputC
-            // 
-            this.lblInputC.AutoSize = true;
-            this.lblInputC.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInputC.Location = new System.Drawing.Point(45, 126);
-            this.lblInputC.Name = "lblInputC";
-            this.lblInputC.Size = new System.Drawing.Size(76, 20);
-            this.lblInputC.TabIndex = 7;
-            this.lblInputC.Text = "Lado (c):";
             // 
             // FrmTriangulo
             // 
