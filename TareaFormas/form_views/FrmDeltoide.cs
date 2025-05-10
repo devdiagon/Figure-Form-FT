@@ -45,12 +45,12 @@ namespace TareaFormas.form_views
 
         private void FrmDeltoide_Load(object sender, EventArgs e)
         {
-            ObjDeltoid.initializeData(txtInputA, txtInputB, txtInputSideA, txtInputSideB, txtPerimeter, txtArea);
+            ObjDeltoid.initializeData(txtInputSideA, txtInputSideB, txtInputAngle, txtPerimeter, txtArea);
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            ObjDeltoid.initializeData(txtInputA, txtInputB, txtInputSideA, txtInputSideB, txtPerimeter, txtArea);
+            ObjDeltoid.initializeData(txtInputSideA, txtInputSideB, txtInputAngle, txtPerimeter, txtArea);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace TareaFormas.form_views
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            ObjDeltoid.ReadData(txtInputA, txtInputB, txtInputSideA, txtInputSideB);
+            ObjDeltoid.ReadData(txtInputSideA, txtInputSideB, txtInputAngle);
             ObjDeltoid.calculatePerimeter();
             ObjDeltoid.calculateArea();
             ObjDeltoid.PrintData(txtPerimeter, txtArea);

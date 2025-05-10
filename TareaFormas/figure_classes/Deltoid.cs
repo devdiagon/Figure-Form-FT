@@ -9,39 +9,54 @@ namespace TareaFormas.figure_classes
 {
     internal class Deltoid : Control
     {
-        private float dSideA;
-        private float dSideB;
-        private float dDiagD
+        private float dAngle;
+        private float dSideA
         {
             get => inputA;
             set => inputA = value;
         }
 
-        private float dDiagd
+        private float dSideB
         {
             get => inputB;
             set => inputB = value;
         }
         public Deltoid() 
         {
-            dSideA = 0.0f; dSideB = 0.0f;
+            dAngle = 0.0f;
         }
 
-        public virtual void ReadData(TextBox txtInputA, TextBox txtInputB, TextBox txtInputSideA, TextBox txtInputSideB)
+        public virtual void ReadData(TextBox txtInputA, TextBox txtInputB, TextBox txtInputAngle)
         {
             try
             {
-                inputA = float.Parse(txtInputA.Text);
-                inputB = float.Parse(txtInputB.Text);
-                dSideA = float.Parse(txtInputSideA.Text);
-                dSideB = float.Parse(txtInputSideB.Text);
+                dSideA = float.Parse(txtInputA.Text);
+                dSideB = float.Parse(txtInputB.Text);
+                dAngle = float.Parse(txtInputAngle.Text);
 
-                if (inputA < 0 || inputB < 0 || dSideA < 0 || dSideB < 0)
+                if (dSideA < 0 || dSideB < 0 || dAngle < 0)
                 {
                     MessageBox.Show("No pueden haber ingresos negativos", "mensaje de error");
-                    inputA = 0.0f; inputB = 0.0f;
-                    dSideA = 0.0f; dSideB = 0.0f;
+                    dSideA = 0.0f; dSideB = 0.0f; dAngle = 0.0f;
+                    return;
                 }
+
+                if (dSideA == dSideB)
+                {
+                    MessageBox.Show("Un deltoide tiene lados (a) y (b) diferentes", "mensaje de error");
+                    dSideA = 0.0f; dSideB = 0.0f; dAngle = 0.0f;
+                    return;
+                }
+
+                if(dAngle <= 0 || dAngle >= 180)
+                {
+                    MessageBox.Show("El ángulo entre los lados tiene que estar entre 0 y 180", "mensaje de error");
+                    dSideA = 0.0f; dSideB = 0.0f; dAngle = 0.0f;
+                    return;
+                }
+
+                //Convertir en ángulo en radianes
+                dAngle = (float)(Math.PI / 180) * dAngle;
             }
             catch
             {
@@ -49,14 +64,12 @@ namespace TareaFormas.figure_classes
             }
         }
 
-        public void initializeData(TextBox txtInputA, TextBox txtInputB, TextBox txtInputSideA, TextBox txtInputSideB, TextBox txtPerimeter, TextBox txtArea)
+        public void initializeData(TextBox txtInputA, TextBox txtInputB, TextBox txtInputAngle, TextBox txtPerimeter, TextBox txtArea)
         {
-            inputA = 0.0f; inputB = 0.0f;
-            dSideA = 0.0f; dSideB = 0.0f;
+            dSideA = 0.0f; dSideB = 0.0f; dAngle = 0.0f;
             perimeter = 0.0f; area = 0.0f;
 
-            txtInputA.Text = ""; txtInputB.Text = "";
-            txtInputSideA.Text = ""; txtInputSideB.Text = "";
+            txtInputA.Text = ""; txtInputB.Text = ""; txtInputAngle.Text = "";
             txtPerimeter.Text = ""; txtArea.Text = "";
 
             txtInputA.Focus();
@@ -68,7 +81,7 @@ namespace TareaFormas.figure_classes
         }
         public void calculateArea()
         {
-            area = dDiagD * dDiagd / 2;
+            area = dSideA * dSideB * (float)Math.Sin(dAngle);
         }
     }
 }
