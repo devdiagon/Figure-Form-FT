@@ -52,6 +52,7 @@ namespace TareaFormas.figure_classes
                     tBaseB = 0.0f; tBaseb = 0.0f;
                     tSide1 = 0.0f; tSide2 = 0.0f;
                     tHeight = 0.0f;
+                    return;
                 }
 
                 if(tBaseB <= tBaseb)
@@ -60,6 +61,7 @@ namespace TareaFormas.figure_classes
                     tBaseB = 0.0f; tBaseb = 0.0f;
                     tSide1 = 0.0f; tSide2 = 0.0f;
                     tHeight = 0.0f;
+                    return;
                 }
 
                 computeHeight();
