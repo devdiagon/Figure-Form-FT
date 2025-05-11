@@ -115,28 +115,28 @@
             // cuadradoToolStripMenuItem
             // 
             this.cuadradoToolStripMenuItem.Name = "cuadradoToolStripMenuItem";
-            this.cuadradoToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.cuadradoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.cuadradoToolStripMenuItem.Text = "Cuadrado";
             this.cuadradoToolStripMenuItem.Click += new System.EventHandler(this.cuadradoToolStripMenuItem_Click);
             // 
             // rectanguloToolStripMenuItem
             // 
             this.rectanguloToolStripMenuItem.Name = "rectanguloToolStripMenuItem";
-            this.rectanguloToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.rectanguloToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.rectanguloToolStripMenuItem.Text = "Rectángulo";
             this.rectanguloToolStripMenuItem.Click += new System.EventHandler(this.rectanguloToolStripMenuItem_Click);
             // 
             // romboToolStripMenuItem
             // 
             this.romboToolStripMenuItem.Name = "romboToolStripMenuItem";
-            this.romboToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.romboToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.romboToolStripMenuItem.Text = "Rombo";
             this.romboToolStripMenuItem.Click += new System.EventHandler(this.romboToolStripMenuItem_Click);
             // 
             // romboideToolStripMenuItem
             // 
             this.romboideToolStripMenuItem.Name = "romboideToolStripMenuItem";
-            this.romboideToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.romboideToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.romboideToolStripMenuItem.Text = "Romboide";
             this.romboideToolStripMenuItem.Click += new System.EventHandler(this.romboideToolStripMenuItem_Click);
             // 

@@ -43,12 +43,14 @@ namespace TareaFormas.figure_classes
                 {
                     MessageBox.Show("No pueden haber ingresos negativos", "mensaje de error");
                     tSideA = 0.0f; tSideB = 0.0f; tSideC = 0.0f;
+                    return;
                 }
 
                 if (!(tSideA + tSideB > tSideC && tSideA + tSideC > tSideB && tSideB + tSideC > tSideA))
                 {
                     MessageBox.Show("Lados no válidos", "mensaje de error");
                     tSideA = 0.0f;tSideB = 0.0f; tSideC = 0.0f;
+                    return;
                 }
             }
             catch
